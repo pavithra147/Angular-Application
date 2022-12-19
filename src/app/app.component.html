@@ -1,0 +1,53 @@
+<!-- <div class="app-component">
+<p>Encapsulation for component style<p>
+</div>
+<br>
+<app-product></app-product> -->
+
+<h1>{{Example}}</h1>  <!--Interpolation-->
+<h1 style="color:crimson">PROPERTY BINDING</h1>
+<div>
+     <img [src]="image" alt="Img"/> <!-- Property Binding ,here src is the property of an element  is binding with the componentis property image -->
+</div>
+<div>
+    <button [disabled]="change">SHOW</button>
+    <p>{{change}}</p>
+</div>
+
+
+<br>
+<h1 style="color:crimson">EVENT BINDING</h1>
+<div>
+<button (click)="increment()">click to see the increment</button>   <!--Event Binding-->
+<p>count={{count}}</p>
+</div>
+
+<h1 style="color:crimson">TWO WAY BINDING</h1>
+<div>
+    <input type="text" [(ngModel)]="vehicleType">  <!--for two way binding,use ngmodel directive in [(ngModel)]to this we assigning which want to be bind to --> <!--it will affect the app.component.ts-->
+    <p>Type of Vehicle is <i>{{vehicleType}}</i></p> <!--This is to see changes in class in template-->
+</div>
+
+<div>                                                                                     <!--updatedvalue will store in $event-->  
+    <input type="text" [ngModel]="vehicle" (ngModelChange)="updatedVehicleType($event)">  <!--we can use property and event binding separately-->
+    <p>Type of Vehicle is <i>{{vehicle}}</i></p> <!--This is to see changes in class in template--> <!--NgModel is used to display the data property update that property when user make changes-->
+</div>
+                 <!--or-->
+         <!--By using getters and setters we can execute multiple lines of code without spliting property and event binding-->
+<h1 style="color:crimson">GETTERS AND SETTERS</h1>
+         <div>
+            <input type="text" [(ngModel)]="age">  <!--for two way binding,use ngmodel directive in [(ngModel)]to this we assigning which want to be bind to --> <!--it will affect the app.component.ts-->
+            <p>Age:<i>{{age}}</i></p> <!--This is to see changes in class in template-->
+        </div>
+
+<!--Attribute Binding-->
+<h1 style="color:crimson">Attribute Binding </h1>
+<table>
+    <tr>
+        <th [attr.colspan]="colval">Heading</th>
+    </tr>
+    <tr>
+        <td >Content</td>
+        <td>Topic</td>
+    </tr>
+</table>
