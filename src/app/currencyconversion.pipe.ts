@@ -5,7 +5,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class CurrencyconversionPipe implements PipeTransform {
 
-  transform(dollar: number, ...args: number[]): number {
+  transform(dollar: number): number {
   
     return dollar*80;
   }
