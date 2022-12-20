@@ -1,0 +1,24 @@
+
+<h1 style="color:coral">{{title | uppercase}}</h1>
+<h1 style="color:darkgoldenrod">{{title | lowercase}}</h1>
+<h2>{{dateDetails}}</h2>
+<h2>{{dateDetails | date}}</h2>
+<!--parameters to the pipe-->
+<h1 style="color:aquamarine"><i>slice</i></h1>
+<h2>{{title | slice: 3: 8}}</h2>
+<h1 style="color:aquamarine"><i>Json Pipe</i></h1>
+<h2>{{employee}}</h2>
+<h2>{{employee | json}}</h2>
+<!--use two pipes at same time-->
+<h3>{{employee |json| uppercase}}</h3>
+
+<!--Number-->
+<h1 style="color:cadetblue">Number pipe</h1>
+<h2>{{values | number:'1'}}</h2> <!--it take one number from last-->
+<h2>{{secondValue | number:'3:2-3'}}</h2> <!--it take three numbers before . and after decimal it will take digits 2-3-->
+
+<!--Currency Pipe-->
+<h1 style="color:cadetblue">Currency Pipe</h1>
+<h2>{{item |currency:'INR':'Euros'}}</h2>
+
+
